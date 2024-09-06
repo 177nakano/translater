@@ -1,9 +1,9 @@
-import lisntener
+import getCoordinates
 import extractText
-
+import outputText
 
 if __name__ == "__main__":
-    logger = lisntener.CoordinateLogger()
+    logger = getCoordinates.CoordinateLogger()
     print("select area.")
     logger.start()
     coordinates = []
@@ -14,6 +14,7 @@ if __name__ == "__main__":
                        "bottom" : logger.coordinates["end"][1]}"""
         coordinates = logger.coordinates['start'] + logger.coordinates['end']
 
-    #text = extractText.extract_text(coordinates)
     text = extractText.extract_text(coordinates)
     print(f"text : {text}")
+
+    outputText.output_text(text)
