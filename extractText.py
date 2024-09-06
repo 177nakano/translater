@@ -13,7 +13,7 @@ def extract_text(coordinates):
     img_bytes = buffered.getvalue()
     
     # EasyOCR のリーダーを作成
-    reader = easyocr.Reader(['en'])
+    reader = easyocr.Reader(['ja'])
     
     # バイトデータをファイルに保存する
     with open("temp_image.png", "wb") as temp_file:

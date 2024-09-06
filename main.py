@@ -15,5 +15,5 @@ if __name__ == "__main__":
         coordinates = logger.coordinates['start'] + logger.coordinates['end']
 
     #text = extractText.extract_text(coordinates)
-    text = extractText.extract_text((100, 200, 400, 300))
+    text = extractText.extract_text(coordinates)
     print(f"text : {text}")
