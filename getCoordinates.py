@@ -28,7 +28,6 @@ class CoordinateLogger:
                 'start': (self.start_x, self.start_y),
                 'end': (self.end_x, self.end_y)
             }
-            
             return False
         
     def on_move(self, x, y):
