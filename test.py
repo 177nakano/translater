@@ -1,5 +1,3 @@
-import tkinter as tk
+import tranlateText
 
-root = tk.Tk()
-print(f"Tkinter version: {root.tk.call('info', 'patchlevel')}")
-root.destroy()
+print(tranlateText.translate("This is a Pen"))

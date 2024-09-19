@@ -16,6 +16,6 @@ if __name__ == "__main__":
         coordinates = logger.coordinates['start'] + logger.coordinates['end']
 
     text = extractText.extract_text(coordinates)
-    print(f"text : {text}")
+    translated_text = tranlateText.translate(text)
 
-    outputText.output_text(text)
+    outputText.output_text(translated_text)
