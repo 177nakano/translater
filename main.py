@@ -9,9 +9,9 @@ if __name__ == "__main__":
     logger.start()
     coordinates = []
     if hasattr(logger, 'coordinates'):
-
         coordinates = logger.coordinates['start'] + logger.coordinates['end']
 
+    print(coordinates)
     text = extractText.extract_text(coordinates)
     translated_text = tranlateText.translate(text)
 
