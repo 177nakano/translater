@@ -1,6 +1,7 @@
 import getCoordinates
 import extractText
 import outputText
+import tranlateText
 
 if __name__ == "__main__":
     logger = getCoordinates.CoordinateLogger()
