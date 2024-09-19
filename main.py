@@ -7,7 +7,7 @@ if __name__ == "__main__":
     logger = getCoordinates.CoordinateLogger()
     print("select area.")
     logger.start()
-    coordinates = []
+
     if hasattr(logger, 'coordinates'):
         coordinates = logger.coordinates['start'] + logger.coordinates['end']
 
