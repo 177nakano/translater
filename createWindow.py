@@ -21,7 +21,6 @@ from tkinter import ttk
 
 class Application(tk.Frame):
     def __init__(self,master):
-        self.master = tk.Tk()
         self.master.title("TextOutptter")
         self.master.geometry("400x400+1520+580")
         self.master.attributes("-alpha",0.7)
