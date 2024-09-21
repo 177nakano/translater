@@ -1,4 +1,5 @@
 import tkinter as tk
+import main
 
 class App(tk.Frame):
     def __init__(self, master=None):
@@ -14,6 +15,7 @@ class App(tk.Frame):
         buttom.place(relx=0.5,rely=0.9,anchor=tk.CENTER)
 
     def change_text(self):
-        text = "change"
+        #text = "change"
+        text = main.translate()
 
         self.label.configure(text=text)

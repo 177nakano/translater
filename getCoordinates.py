@@ -16,7 +16,7 @@ class CoordinateLogger:
             else:
                 # マウスボタンが押されたままドラッグしている時の座標を更新
                 self.end_x, self.end_y = x, y
-                print(f"Current position: ({self.end_x}, {self.end_y})")
+                #print(f"Current position: ({self.end_x}, {self.end_y})")
 
         if not pressed:
             # マウスボタンが離された時の座標を記録

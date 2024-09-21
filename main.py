@@ -31,13 +31,28 @@ import test2
 
     return tranlateText"""
 
+logger = getCoordinates.CoordinateLogger()
+
 def main():
     root = tk.Tk()
     root.title("test")
     root.geometry("200x300")
     app = test2.App(master=root)
-    logger = getCoordinates.CoordinateLogger()
+    
     app.mainloop()
+
+def translate():
+    logger.start()
+    if hasattr(logger, 'coordinates'):
+        coordinates = logger.coordinates['start'] + logger.coordinates['end']
+
+    print(coordinates)
+    text = extractText.extract_text(coordinates)
+    translated_text = tranlateText.translate(text)
+
+    return translated_text
+
+
 
 if __name__ == "__main__":
     main()
