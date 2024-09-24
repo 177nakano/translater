@@ -36,12 +36,15 @@ logger = getCoordinates.CoordinateLogger()
 def main():
     root = tk.Tk()
     root.title("test")
-    root.geometry("200x300")
+    root.geometry("400x400+1520+580")
+    root.attributes("-alpha",0.7)
+    root.attributes("-topmost",True)
     app = test2.App(master=root)
     
     app.mainloop()
 
 def translate():
+    
     logger.start()
     if hasattr(logger, 'coordinates'):
         coordinates = logger.coordinates['start'] + logger.coordinates['end']
