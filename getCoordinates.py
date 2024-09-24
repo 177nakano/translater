@@ -29,13 +29,14 @@ class CoordinateLogger:
                 'end': (self.end_x - self.start_x, self.end_y - self.start_y)
             }
             listener.stop()
+            print("stop")
             return False
         
     def on_move(self, x, y):
         if self.start_x is not None and self.start_y is not None:
             # ドラッグ中の座標を更新
             self.end_x, self.end_y = x, y
-            print(f"Current position: ({self.end_x}, {self.end_y})")
+            #print(f"Current position: ({self.end_x}, {self.end_y})")
             
     def start(self):
         global listener
