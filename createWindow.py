@@ -6,7 +6,7 @@ import main
 class App(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
-        self.pack() #selfがframeになる 。
+        self.pack() 
         
         self.text = "ここにテキストが入ります"
 

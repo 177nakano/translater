@@ -50,9 +50,7 @@ def translate():
     print(coordinates)
     plane_text = extractText.extract_text(coordinates)
     translated_text = tranlateText.translate(plane_text)
-    print(f"planeText{translated_text}")
     del logger
-    print("trText" + translated_text.text.replace("：","。").replace("。","。\n"))
     return translated_text.text.replace("：","。").replace("。","。\n").replace(" ","")
 
 
