@@ -21,9 +21,9 @@ def extract_text(coordinates):
     
     # 保存したファイルパスを使って OCR を実行
     result = reader.readtext("temp_image.png", detail=0)
-    
+
     # 一時ファイルを削除する
     import os
     os.remove("temp_image.png")
     
-    return ' '.join(result)
+    return " ".join(result)

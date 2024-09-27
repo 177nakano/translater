@@ -31,11 +31,10 @@ import test2
 
     return tranlateText"""
 
-logger = getCoordinates.CoordinateLogger()
 
 def main():
     root = tk.Tk()
-    root.title("test")
+    root.title("Translater")
     root.geometry("400x400+1520+580")
     root.attributes("-alpha",0.7)
     root.attributes("-topmost",True)
@@ -44,16 +43,18 @@ def main():
     app.mainloop()
 
 def translate():
-    
+    logger = getCoordinates.CoordinateLogger()
     logger.start()
     if hasattr(logger, 'coordinates'):
         coordinates = logger.coordinates['start'] + logger.coordinates['end']
 
     print(coordinates)
-    text = extractText.extract_text(coordinates)
-    translated_text = tranlateText.translate(text)
-
-    return translated_text
+    plane_text = extractText.extract_text(coordinates)
+    translated_text = tranlateText.translate(plane_text)
+    print(f"planeText{translated_text}")
+    del logger
+    print("trText" + translated_text.text.replace("：","。").replace("。","。\n"))
+    return translated_text.text.replace("：","。").replace("。","。\n").replace(" ","")
 
 
 

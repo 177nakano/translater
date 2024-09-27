@@ -28,8 +28,7 @@ class CoordinateLogger:
                 'start': (self.start_x, self.start_y),
                 'end': (self.end_x - self.start_x, self.end_y - self.start_y)
             }
-            listener.stop()
-            print("stop")
+
             return False
         
     def on_move(self, x, y):
@@ -42,4 +41,13 @@ class CoordinateLogger:
         global listener
         # マウスイベントリスナーを開始
         with mouse.Listener(on_click=self.on_click, on_move=self.on_move) as listener:
-            listener.join()
+            try :
+                listener.start()
+                listener.join()
+                print("リスナーを再生成しました")
+            except:
+                listener.join()
+
+    def __del__(self):
+        listener.stop()
+        print("マウスの監視を停止しました。")
