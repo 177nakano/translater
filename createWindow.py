@@ -1,37 +1,34 @@
 import tkinter as tk
-from tkinter import ttk
-
-"""def output_text(text):
-    window = tk.Tk()
-    window.title("TextOutptter")
-    window.geometry("400x400+1520+580")
-    window.attributes("-alpha",0.7)
-    window.attributes("-topmost",True)
-
-    frame = tk.Frame(window,pady=10,padx=5,relief=tk.GROOVE,width=350,height=350)
-    frame.pack()
-
-    label = tk.Label(frame,text=text,wraplength=300)
-    label.pack(anchor="center")
-
-    buttom = tk.Button(text="Exit",command=window.destroy)
-    buttom.place(relx=0.5,rely=0.9,anchor=tk.CENTER)
-
-    window.mainloop()"""
-
-class Application(tk.Frame):
-    def __init__(self,master):
-        self.master.title("TextOutptter")
-        self.master.geometry("400x400+1520+580")
-        self.master.attributes("-alpha",0.7)
-        self.master.attributes("-topmost",True)
-
-        self.text = "ここに翻訳文が入ります"
-
-        self.frame = tk.Frame(self.master,pady=10,padx=5,relief=tk.GROOVE,width=350,height=350)
-        self.frame.pack()
-
-        self.label = tk.Label(self.frame,text=self.text,wraplength=300)
-        self.label.pack(anchor="center")
+import main
 
 
+
+class App(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.pack() #selfがframeになる 。
+        
+        self.text = "ここにテキストが入ります"
+
+        self.frame = tk.Frame(self,pady=10,padx=5,relief=tk.GROOVE,width=350,height=350)
+        self.frame.pack(fill=tk.BOTH, expand=True)
+
+        self.label = tk.Label(self.frame,text=self.text,wraplength=300, justify="center")
+        self.label.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+
+        buttom = tk.Button(text="Translate",command=self.delay)
+        buttom.place(relx=0.5,rely=0.9,anchor=tk.CENTER)
+
+    def delay(self):
+        self.label.configure(text="翻訳する範囲を選択してください")
+
+        self.after(1,self.change_text)
+
+    def change_text(self):
+        #text = "change"
+
+        try:
+            text = main.translate()
+            self.label.configure(text=text)
+        except Exception as e:
+            self.label.configure(text=f"翻訳結果が得られませんでした。\n {e}")

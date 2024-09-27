@@ -1,9 +1,8 @@
 import getCoordinates
 import extractText
-import createWindow
 import tranlateText
 import tkinter as tk
-import test2
+import createWindow
 
 
 """if __name__ == "__main__":
@@ -38,7 +37,7 @@ def main():
     root.geometry("400x400+1520+580")
     root.attributes("-alpha",0.7)
     root.attributes("-topmost",True)
-    app = test2.App(master=root)
+    app = createWindow.App(master=root)
     
     app.mainloop()
 
