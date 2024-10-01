@@ -1,8 +1,10 @@
 import deepl
 from deepl.exceptions import DeepLException
 import os
+from dotenv import load_dotenv
 
 def translate(text):
+    load_dotenv()
     translater = deepl.Translator(os.getenv("DEEPL_API_KEY"))
 
     try:

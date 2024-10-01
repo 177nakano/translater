@@ -21,6 +21,7 @@ class App(tk.Frame):
 
     def delay(self):
         self.label.configure(text="翻訳する範囲を選択してください")
+        self.label.update_idletasks()
 
         self.after(1,self.change_text)
 
