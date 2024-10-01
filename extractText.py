@@ -1,5 +1,4 @@
 import pyautogui
-from PIL import Image
 import easyocr
 import io
 

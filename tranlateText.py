@@ -12,4 +12,4 @@ def translate(text):
     except DeepLException as e:
         return e
     
-    return translated_text
+    return translated_text.text.replace("。","。\n").replace(" ","")

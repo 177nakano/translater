@@ -16,8 +16,11 @@ class App(tk.Frame):
         self.label = tk.Label(self.frame,text=self.text,wraplength=300, justify="center")
         self.label.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
-        buttom = tk.Button(text="Translate",command=self.delay)
-        buttom.place(relx=0.5,rely=0.9,anchor=tk.CENTER)
+        translate_buttom = tk.Button(text="Translate",command=self.delay)
+        translate_buttom.place(relx=0.35,rely=0.9,anchor=tk.CENTER)
+
+        elaboration_button = tk.Button(text="regeneration",command=self.elaboration)
+        elaboration_button.place(relx=0.65,rely=0.9,anchor=tk.CENTER)
 
     def delay(self):
         self.label.configure(text="翻訳する範囲を選択してください")
@@ -33,3 +36,9 @@ class App(tk.Frame):
             self.label.configure(text=text)
         except Exception as e:
             self.label.configure(text=f"翻訳結果が得られませんでした。\n {e}")
+
+    def elaboration(self):
+        text = main.elaboration()
+        self.label.configure(text=text)
+
+        self.label.update_idletasks()
